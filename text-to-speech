@@ -1,0 +1,11 @@
+from gtts import gTTS
+from playsound import playsound
+import os    
+
+if __name__ == "__main__":
+    tts = gTTS(text="Hello, what can i do for you?", lang='en')
+    local_audio_file = "local_temp.mp3"
+    tts.save(local_audio_file)
+    # to start the file from python
+    playsound(local_audio_file)
+    os.remove(local_audio_file)
